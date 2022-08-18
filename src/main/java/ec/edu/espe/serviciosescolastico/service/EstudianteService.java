@@ -33,11 +33,15 @@ public class EstudianteService {
     public Estudiante crear(Estudiante estudiante) throws Exception {
 
         try{
-
+            if(estudiante.getCedula() != null) {
 
                 Estudiante respuesta = this.estudianteRepository.save(estudiante);
 
-            return respuesta;
+                return respuesta;
+            }
+            else {
+            return null;
+            }
 
 
 
