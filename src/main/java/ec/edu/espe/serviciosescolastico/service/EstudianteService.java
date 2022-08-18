@@ -72,6 +72,8 @@ public class EstudianteService {
                     curso.setParalelo(paraleloEnum.A.getValue());
                     claseRepository.save(curso);
                     log.info("estudiante con cedula {} asignado correctamente", estudiante.getCedula());
+                }else {
+                    log.info("curso lleno");
                 }
             } else if (paralelo == 2) {
                 if(curso.getCupos() < 20) {
@@ -82,6 +84,8 @@ public class EstudianteService {
                     curso.setParalelo(paraleloEnum.B.getValue());
                     claseRepository.save(curso);
                     log.info("estudiante con cedula {} asignado correctamente", estudiante.getCedula());
+                }else{
+                    log.info("curso lleno");
                 }
             }else {
                 if (curso.getCupos() < 20) {
@@ -93,6 +97,9 @@ public class EstudianteService {
 
                     claseRepository.save(curso);
                     log.info("estudiante con cedula {} asignado correctamente", estudiante.getCedula());
+                }
+                else{
+                    log.info("curso lleno");
                 }
             }
 
